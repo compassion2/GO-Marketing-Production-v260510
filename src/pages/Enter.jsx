@@ -56,22 +56,17 @@ export default function Enter() {
             </p>
           </Link>
 
-          <div className="p-6 border border-border">
-            <h3 className="font-display text-lg font-medium text-foreground mb-2">
+          <Link
+            to="/contact"
+            className="block p-6 border border-border hover:border-primary/30 transition-colors group"
+          >
+            <h3 className="font-display text-lg font-medium text-foreground mb-2 group-hover:text-primary transition-colors">
               Remain in Relationship
             </h3>
-            <p className="text-muted-foreground text-sm mb-6">
+            <p className="text-muted-foreground text-sm">
               Occasional updates when new inquiries open.
             </p>
-            <iframe
-              src="https://c2interest.base44.app?source=Generative Ontology"
-              width="100%"
-              height="900"
-              frameBorder="0"
-              style={{ border: "none", borderRadius: "0.25rem" }}
-              title="Stay Connected"
-            />
-          </div>
+          </Link>
         </div>
       </section>
     </div>
