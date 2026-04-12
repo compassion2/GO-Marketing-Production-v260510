@@ -1,48 +1,88 @@
+import { Section } from "@/components/ui/Section";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
-
-const links = [
-  { label: "What is Generative Ontology?", path: "/what-is", desc: "An introduction to the field" },
-  { label: "Core Orientations", path: "/core-orientations", desc: "Foundational stances and commitments" },
-  { label: "Frameworks", path: "/frameworks", desc: "Maps for navigating inquiry" },
-  { label: "Events", path: "/events", desc: "Gatherings and conversations" },
-  { label: "Resources", path: "/resources", desc: "Readings, recordings, and references" },
-  { label: "Community", path: "/community", desc: "People and practices" },
-  { label: "Notes", path: "/notes", desc: "Working reflections and fragments" },
-  { label: "Enter", path: "/enter", desc: "Begin or continue your inquiry" },
-];
 
 export default function Home() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-20 md:py-32">
-      <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground leading-tight">
-        Generative Ontology
-      </h1>
-      <p className="mt-6 text-lg md:text-xl text-muted-foreground font-body font-light leading-relaxed max-w-2xl">
-        An inquiry into the living structures of being — how worlds are generated, sustained, and transformed through attention, relation, and practice.
-      </p>
+    <div className="mx-auto max-w-4xl px-6 py-16 md:py-24">
+      <header className="mb-16 text-center">
+        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-foreground mb-4">
+          Generative Ontology
+        </h1>
+        <p className="font-display text-xl md:text-2xl text-muted-foreground italic mb-8">
+          A Compassion 2.0 Field of Inquiry
+        </p>
+        <div className="w-24 h-px bg-border mx-auto" />
+      </header>
 
-      <div className="mt-16 border-t border-border/50 pt-12">
-        <nav className="grid gap-1">
-          {links.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className="group flex items-center justify-between py-4 px-4 -mx-4 rounded-sm hover:bg-accent/40 transition-colors duration-200"
-            >
-              <div>
-                <span className="text-base font-body font-medium text-foreground group-hover:text-primary transition-colors">
-                  {link.label}
-                </span>
-                <span className="block text-sm text-muted-foreground mt-0.5">
-                  {link.desc}
-                </span>
-              </div>
-              <ArrowRight className="w-4 h-4 text-muted-foreground/50 group-hover:text-primary group-hover:translate-x-1 transition-all duration-200" />
-            </Link>
-          ))}
-        </nav>
-      </div>
+      <Section>
+        <p>
+          This work exists because the assumptions beneath our systems shape what becomes possible within them. How we understand reality—what we take to be real, valuable, and relational—determines the structures we build and the futures we can imagine.
+        </p>
+        <p>
+          Generative Ontology is not a method or a framework to be applied. It is a field of inquiry—a space for examining the foundations beneath organizational life, capital flows, technological systems, and human development. It invites a slower, more considered way of thinking about what we are creating and why.
+        </p>
+      </Section>
+
+      <Section title="What Is Generative Ontology">
+        <p>
+          Ontology, in the philosophical tradition, asks: what is the nature of being? What exists, and how do things relate to one another? Generative Ontology carries this inquiry into the practical domain—exploring how our assumptions about reality shape the systems we design and inhabit.
+        </p>
+        <p>
+          Where extractive ontologies assume separation, scarcity, and static entities, a generative ontology begins from relationship, emergence, and possibility. It asks not only what is, but what is becoming—and what conditions allow for flourishing rather than depletion.
+        </p>
+      </Section>
+
+      <Section title="Why This Matters Now">
+        <p>
+          We find ourselves in systems that were designed under assumptions that no longer serve. Organizations optimized for extraction encounter the limits of burnout and disengagement. Capital structures built on endless growth meet ecological boundaries. Technologies designed for attention capture fragment our capacity for presence.
+        </p>
+        <p>
+          These are not merely strategic problems—they are ontological ones. Addressing them requires more than new tools or policies. It requires examining the worldviews that made such designs seem reasonable in the first place.
+        </p>
+      </Section>
+
+      <Section title="Relationship to Compassion 2.0">
+        <p>
+          Generative Ontology sits beneath the applied frameworks of Compassion 2.0—informing orientations like the ROI of Care, Resonance, and Coherence. Where those frameworks offer practical pathways for organizational and personal transformation, this inquiry attends to the philosophical ground from which they arise.
+        </p>
+        <p>
+          The two are not separate but nested. Compassion 2.0 operates at the level of practice and application. Generative Ontology holds space for reflection on the deeper assumptions that make such practices meaningful and effective.
+        </p>
+      </Section>
+
+      <Section title="Ways of Engaging">
+        <ul className="list-disc list-outside ml-6 space-y-3">
+          <li>
+            <span className="font-medium">Salons and dialogues</span> — Periodic gatherings for considered conversation on ontological questions as they relate to capital, organizations, and human systems.
+          </li>
+          <li>
+            <span className="font-medium">Written reflections</span> — Essays and explorations that attempt to articulate what often resists articulation.
+          </li>
+          <li>
+            <span className="font-medium">Research collaborations</span> — Partnerships with those working at the edges of organizational theory, contemplative science, and systems design.
+          </li>
+        </ul>
+      </Section>
+
+      <Section borderTop>
+        <p>
+          If you find yourself drawn to questions about the nature of flourishing systems—if you sense that something foundational needs attention—you are welcome to explore further.
+        </p>
+        <p className="text-muted-foreground mb-10">
+          This is a place to arrive, to think, and to orient.
+        </p>
+        <div className="text-center">
+          <Link
+            to="/enter"
+            className="inline-block px-8 py-3 border border-foreground text-foreground font-medium tracking-wide hover:bg-foreground hover:text-background transition-colors"
+          >
+            ENTER THE INQUIRY
+          </Link>
+          <p className="mt-4 text-sm text-muted-foreground">
+            Begin where Generative Ontology begins.
+          </p>
+        </div>
+      </Section>
     </div>
   );
 }

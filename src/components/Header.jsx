@@ -1,76 +1,82 @@
-import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
-const navItems = [
-  { label: "Home", path: "/" },
-  { label: "What Is", path: "/what-is" },
-  { label: "Core Orientations", path: "/core-orientations" },
-  { label: "Frameworks", path: "/frameworks" },
-  { label: "Events", path: "/events" },
-  { label: "Resources", path: "/resources" },
-  { label: "Community", path: "/community" },
-  { label: "Notes", path: "/notes" },
-  { label: "Enter", path: "/enter" },
+const navLinks = [
+  { href: "/what-is", label: "What Is" },
+  { href: "/core-orientations", label: "Core Orientations" },
+  { href: "/events", label: "Events" },
+  { href: "/frameworks", label: "Frameworks" },
+  { href: "/resources", label: "Resources" },
+  { href: "/community", label: "Community" },
 ];
 
 export default function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const { pathname } = useLocation();
+  const location = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="border-b border-border/60 bg-background/80 backdrop-blur-sm sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="font-heading text-xl md:text-2xl font-semibold tracking-tight text-foreground hover:text-primary transition-colors">
-          Generative Ontology
-        </Link>
+    <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+      <div className="mx-auto max-w-5xl px-6 py-6">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="font-display text-xl font-medium text-foreground hover:text-primary transition-colors">
+            Generative Ontology
+          </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-1">
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className={`px-3 py-1.5 text-sm font-body rounded-sm transition-colors duration-200 ${
-                pathname === item.path
-                  ? "text-primary font-medium bg-accent/60"
-                  : "text-muted-foreground hover:text-foreground hover:bg-accent/40"
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={`text-sm transition-colors ${
+                  location.pathname === link.href
+                    ? "text-primary font-medium"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-2 text-muted-foreground hover:text-foreground transition-colors"
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-foreground p-2"
+            aria-label="Toggle menu"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {mobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <nav className="md:hidden mt-6 pb-2 border-t border-border pt-6">
+            <div className="flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-sm transition-colors ${
+                    location.pathname === link.href
+                      ? "text-primary font-medium"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </nav>
+        )}
       </div>
-
-      {/* Mobile nav */}
-      {mobileOpen && (
-        <nav className="lg:hidden border-t border-border/40 bg-background px-6 py-4 space-y-1">
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              onClick={() => setMobileOpen(false)}
-              className={`block px-3 py-2.5 text-sm font-body rounded-sm transition-colors ${
-                pathname === item.path
-                  ? "text-primary font-medium bg-accent/60"
-                  : "text-muted-foreground hover:text-foreground hover:bg-accent/40"
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-      )}
     </header>
   );
 }

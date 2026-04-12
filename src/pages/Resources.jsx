@@ -1,56 +1,99 @@
-import PageShell from "../components/PageShell";
+import { PageHeader } from "@/components/ui/PageHeader";
+import { Section } from "@/components/ui/Section";
 
-const sections = [
+const essays = [
+  "On the Ontology of Care",
+  "Beyond Extraction: Toward Generative Capital",
+  "The Relational Field in Organizational Life",
+  "Flourishing as Process"
+];
+
+const dialogues = [
+  "What Do We Mean by Generative?",
+  "Resonance in Practice",
+  "The Limits of Extraction"
+];
+
+const glossary = [
   {
-    heading: "Foundational Texts",
-    items: [
-      "Heidegger, M. — Being and Time",
-      "Whitehead, A.N. — Process and Reality",
-      "Maturana, H. & Varela, F. — The Tree of Knowledge",
-      "Bortoft, H. — The Wholeness of Nature",
-      "Bohm, D. — Wholeness and the Implicate Order",
-    ],
+    term: "Ontology",
+    definition: "The study of the nature of being and reality; the fundamental assumptions about what exists and how things relate to one another."
   },
   {
-    heading: "Contemporary Voices",
-    items: [
-      "Bonnitta Roy — Process Ontology and Collective Insight",
-      "Nora Bateson — Warm Data and Symmathesy",
-      "Zak Stein — Education in a Time Between Worlds",
-      "Andreas Weber — Enlivenment",
-    ],
+    term: "Generativity",
+    definition: "The capacity to create conditions for new possibilities; the quality of producing more than is consumed and leaving systems enriched."
   },
   {
-    heading: "Practice Traditions",
-    items: [
-      "Phenomenological Inquiry",
-      "Goethean Science",
-      "Contemplative Dialogue",
-      "Presencing and Theory U",
-    ],
+    term: "Resonance",
+    definition: "The quality of attunement between elements of a system; the degree to which parts vibrate in harmony rather than friction."
   },
+  {
+    term: "Coherence",
+    definition: "The integration of resonant patterns over time; a felt sense of integrity and direction that allows for diversity while maintaining wholeness."
+  },
+  {
+    term: "Flourishing",
+    definition: "An ongoing process of growth, adaptation, and renewal; dynamic aliveness that includes challenge, learning, and transformation."
+  },
+  {
+    term: "Extractive Systems",
+    definition: "Systems that take more than they give back; patterns that deplete resources, relationships, and capacities over time."
+  },
+  {
+    term: "Relational Fields",
+    definition: "The patterns of connection and relationship that form the context for interaction; the medium through which all activity occurs."
+  },
+  {
+    term: "Care as Infrastructure",
+    definition: "Understanding care not as a soft addition to strategy but as the relational foundation upon which organizational capacity rests."
+  }
 ];
 
 export default function Resources() {
   return (
-    <PageShell
-      title="Resources"
-      subtitle="Readings, references, and practice traditions."
-    >
-      <div className="space-y-10">
-        {sections.map((s, i) => (
-          <div key={i}>
-            <h2 className="font-heading text-xl font-semibold mb-4">{s.heading}</h2>
-            <ul className="space-y-2">
-              {s.items.map((item, j) => (
-                <li key={j} className="text-foreground/80 text-sm pl-4 border-l border-border/50">
-                  {item}
-                </li>
-              ))}
-            </ul>
+    <div className="mx-auto max-w-4xl px-6 py-16 md:py-24">
+        <PageHeader
+          title="Resources"
+          subtitle="Materials for deepening inquiry"
+        />
+
+        <Section title="Essays and Writing">
+          <p className="text-muted-foreground italic mb-4">Coming soon</p>
+          <div className="space-y-3 opacity-60">
+            {essays.map((essay, index) => (
+              <div key={index} className="border-l-2 border-primary/50 pl-4 py-1">
+                <p className="text-foreground">{essay}</p>
+              </div>
+            ))}
           </div>
-        ))}
+        </Section>
+
+        <Section title="Recorded Dialogues">
+          <p className="text-muted-foreground italic mb-4">Coming soon</p>
+          <div className="space-y-3 opacity-60">
+            {dialogues.map((dialogue, index) => (
+              <div key={index} className="border-l-2 border-primary/50 pl-4 py-1">
+                <p className="text-foreground">{dialogue}</p>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Glossary">
+          <div className="space-y-6">
+            {glossary.map((item, index) => (
+              <div key={index} className="pb-5 border-b border-border last:border-b-0">
+                <h3 className="font-display text-lg font-medium text-foreground mb-2">
+                  {item.term}
+                </h3>
+                <p className="text-foreground/90 leading-relaxed">
+                  {item.definition}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Section>
       </div>
-    </PageShell>
   );
 }
+

@@ -1,44 +1,79 @@
-import PageShell from "../components/PageShell";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 
 export default function Enter() {
   return (
-    <PageShell
-      title="Enter"
-      subtitle="Begin or deepen your engagement with Generative Ontology."
-    >
-      <p>
-        There is no single entry point. Every encounter with this material is a beginning. The invitation is simply to attend — to what is arising, what is calling, what is already at work beneath the surface of your attention.
-      </p>
+    <div className="mx-auto max-w-4xl px-6 py-16 md:py-24">
+      <header className="mb-16 text-center">
+        <h1 className="font-display text-3xl md:text-4xl font-medium text-foreground mb-4">
+          Enter the Inquiry
+        </h1>
+        <div className="w-16 h-px bg-border mx-auto" />
+      </header>
 
-      <h2 className="font-heading text-2xl font-semibold mt-10 mb-4">Starting Points</h2>
-      <div className="space-y-3">
-        {[
-          { label: "Read the introduction", path: "/what-is" },
-          { label: "Explore the core orientations", path: "/core-orientations" },
-          { label: "Browse resources and readings", path: "/resources" },
-          { label: "Join the community", path: "/community" },
-          { label: "Attend an event", path: "/events" },
-        ].map((item) => (
-          <Link
-            key={item.path}
-            to={item.path}
-            className="group flex items-center justify-between py-3 px-4 -mx-4 rounded-sm hover:bg-accent/40 transition-colors"
-          >
-            <span className="text-sm font-body font-medium text-foreground group-hover:text-primary transition-colors">
-              {item.label}
-            </span>
-            <ArrowRight className="w-4 h-4 text-muted-foreground/40 group-hover:text-primary group-hover:translate-x-1 transition-all duration-200" />
-          </Link>
-        ))}
-      </div>
-
-      <div className="mt-12 p-6 rounded-sm bg-card border border-border/50">
-        <p className="text-sm text-foreground/80 italic font-heading text-lg leading-relaxed">
-          "The question is not what to know, but how to be — in a way that allows knowing to arise."
+      <section className="mb-16 max-w-2xl mx-auto text-center">
+        <p className="text-foreground leading-relaxed mb-4">
+          Generative Ontology begins not with answers, but with a question.
         </p>
-      </div>
-    </PageShell>
+        <p className="text-foreground leading-relaxed mb-4">
+          It treats being as generative—emerging through relation, coherence, and becoming.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          This is an invitation to orient, not to conclude.
+        </p>
+      </section>
+
+      <section className="mb-20 py-12 border-y border-border">
+        <blockquote className="text-center">
+          <p className="font-display text-xl md:text-2xl lg:text-3xl text-foreground italic leading-relaxed max-w-3xl mx-auto">
+            "What is reality generating, right now—through you, between us, and within the world?"
+          </p>
+        </blockquote>
+      </section>
+
+      <section className="mb-16">
+        <div className="space-y-8 max-w-2xl mx-auto">
+          <Link
+            to="/notes"
+            className="block p-6 border border-border hover:border-primary/30 transition-colors group"
+          >
+            <h3 className="font-display text-lg font-medium text-foreground mb-2 group-hover:text-primary transition-colors">
+              Read the Foundational Notes
+            </h3>
+            <p className="text-muted-foreground text-sm">
+              A concise entry into the premise and the working language.
+            </p>
+          </Link>
+
+          <Link
+            to="/events"
+            className="block p-6 border border-border hover:border-primary/30 transition-colors group"
+          >
+            <h3 className="font-display text-lg font-medium text-foreground mb-2 group-hover:text-primary transition-colors">
+              Participate in a Live Inquiry
+            </h3>
+            <p className="text-muted-foreground text-sm">
+              Upcoming salons, conversations, and gatherings.
+            </p>
+          </Link>
+
+          <div className="p-6 border border-border">
+            <h3 className="font-display text-lg font-medium text-foreground mb-2">
+              Remain in Relationship
+            </h3>
+            <p className="text-muted-foreground text-sm mb-6">
+              Occasional updates when new inquiries open.
+            </p>
+            <iframe
+              src="https://c2interest.base44.app?source=Generative Ontology"
+              width="100%"
+              height="900"
+              frameBorder="0"
+              style={{ border: "none", borderRadius: "0.25rem" }}
+              title="Stay Connected"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
