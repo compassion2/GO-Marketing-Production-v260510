@@ -5,7 +5,16 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
-// Add page imports here
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import WhatIs from './pages/WhatIs';
+import CoreOrientations from './pages/CoreOrientations';
+import Events from './pages/Events';
+import Frameworks from './pages/Frameworks';
+import Resources from './pages/Resources';
+import Community from './pages/Community';
+import Enter from './pages/Enter';
+import Notes from './pages/Notes';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -33,8 +42,18 @@ const AuthenticatedApp = () => {
   // Render the main app
   return (
     <Routes>
-      {/* Add your page Route elements here */}
-      <Route path="*" element={<PageNotFound />} />
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/what-is" element={<WhatIs />} />
+        <Route path="/core-orientations" element={<CoreOrientations />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/frameworks" element={<Frameworks />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/community" element={<Community />} />
+        <Route path="/enter" element={<Enter />} />
+        <Route path="/notes" element={<Notes />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Route>
     </Routes>
   );
 };
