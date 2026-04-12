@@ -2,6 +2,7 @@ import { useState } from "react";
 import { C2Interest } from "@/api/c2ProspectClient";
 
 const INTEREST_AREAS = ["Being", "Thinking", "Relating", "Collaborating", "Acting"];
+const REASON_OPTIONS = ["General Inquiry", "Interested in the Mycelial Network", "Partnership Opportunity", "Speaking Engagement", "Media Request", "Support Request", "Other"];
 const HOW_HEARD_OPTIONS = ["Social Media", "Word of Mouth", "Compassion 2.0", "IDG Network", "Other"];
 const SOURCE_SITE = "Generative Ontology";
 
@@ -9,7 +10,7 @@ export default function Contact() {
   const [form, setForm] = useState({
     first_name: "", last_name: "", email: "", organization: "",
     title: "", linkedin_url: "", company_url: "",
-    interest_areas: [], how_heard: "", message: "",
+    interest_areas: [], how_heard: "", message: "", reason_for_contact: "",
   });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -112,6 +113,15 @@ export default function Contact() {
               placeholder="https://..."
               className="w-full px-4 py-3 bg-background border border-border text-foreground focus:outline-none focus:border-primary/50 transition-colors" />
           </div>
+        </div>
+
+        <div>
+          <label className="block text-sm text-muted-foreground mb-1">Reason for Contact</label>
+          <select name="reason_for_contact" value={form.reason_for_contact} onChange={handleChange}
+            className="w-full px-4 py-3 bg-background border border-border text-foreground focus:outline-none focus:border-primary/50 transition-colors">
+            <option value="">Select a reason</option>
+            {REASON_OPTIONS.map((opt) => <option key={opt} value={opt}>{opt}</option>)}
+          </select>
         </div>
 
         <div>
