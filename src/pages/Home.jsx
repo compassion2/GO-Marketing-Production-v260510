@@ -6,7 +6,7 @@ export default function Home() {
     <div className="mx-auto max-w-4xl px-6 py-16 md:py-24">
       <header className="mb-16 text-center">
         <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-foreground mb-4">
-          Generative Ontology
+          Generative Ontology <span className="text-muted-foreground font-light">23</span>
         </h1>
         <p className="font-display text-xl md:text-2xl text-muted-foreground italic mb-8">
           A Compassion 2.0 Field of Inquiry
