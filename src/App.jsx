@@ -16,6 +16,7 @@ import Community from './pages/Community';
 import Enter from './pages/Enter';
 import Notes from './pages/Notes';
 import Contact from './pages/Contact';
+import Connect from './pages/Connect';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -50,6 +51,7 @@ const AuthenticatedApp = () => {
         <Route path="/enter" element={<Enter />} />
         <Route path="/notes" element={<Notes />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/Connect" element={<Connect />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
     </Routes>
