@@ -19,7 +19,7 @@ export default function Footer() {
             </a>
             <span className="text-muted-foreground text-sm">|</span>
             <Link
-              to="/contact"
+              to="/Connect"
               className="inline-block text-sm text-primary hover:text-primary/80 transition-colors"
             >
               Contact Compassion 2.0
