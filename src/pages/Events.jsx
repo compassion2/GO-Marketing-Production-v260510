@@ -51,7 +51,7 @@ const caseStudies = [
 
 const salonSessions = [
   {
-    date: "Friday, April 17, 2026",
+    date: "Monday, June 22, 2026",
     title: "Session 1: Foundations — What is Generative Capital?",
     content: [
       "Keynote: Defining \"generative\" vs. \"regenerative\" vs. \"extractive\" — ontological frameworks for organizational design",
@@ -61,7 +61,7 @@ const salonSessions = [
     ]
   },
   {
-    date: "Friday, July 10, 2026",
+    date: "Friday, August 21, 2026",
     title: "Session 2: Models — Blurring the Lines Between For-Profit, Non-Profit, and Beyond",
     content: [
       "Keynote: Legal & financial innovation — PBCs, B Corps, L3Cs, cooperatives, community equity, tokenized stewardship",
@@ -71,7 +71,7 @@ const salonSessions = [
     ]
   },
   {
-    date: "Friday, August 21, 2026",
+    date: "Friday, October 23, 2026",
     title: "Session 3: Funders — Who's Ready to Experiment?",
     content: [
       "Keynote: Mapping the landscape — family offices, progressive VCs, impact angels, foundations, and alternative capital pools",
@@ -81,7 +81,7 @@ const salonSessions = [
     ]
   },
   {
-    date: "Friday, October 23, 2026",
+    date: "Thursday, January 22, 2027",
     title: "Session 4: Prototyping — Designing the Next Generation of Generative Organizations",
     content: [
       "Keynote: From theory to practice — how to design governance, capital flows, and accountability for resonance, not ROI",
@@ -139,11 +139,11 @@ export default function Events() {
             <div>
               <p className="text-sm text-muted-foreground uppercase tracking-wider mb-1">Time</p>
               <p className="text-foreground">2:00 PM – 5:00 PM PST (Sessions)</p>
-              <p className="text-foreground">5:00 PM Happy Hour</p>
+              <p className="text-foreground">5:00 PM Reception</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground uppercase tracking-wider mb-1">Contribution</p>
-              <p className="text-foreground">$75 per session</p>
+              <p className="text-foreground">$50 per session</p>
               <p className="text-muted-foreground text-sm mt-1">Donation to support DrawBridge children's arts programs</p>
             </div>
             <div>
@@ -266,7 +266,7 @@ export default function Events() {
           <div className="grid md:grid-cols-2 gap-6 mb-8 pb-8 border-b border-border">
             <div>
               <p className="text-sm text-muted-foreground uppercase tracking-wider mb-1">Date</p>
-              <p className="text-foreground">Wednesday, February 11, 2025</p>
+              <p className="text-foreground">Wednesday, February 11, 2026</p>
               <p className="text-muted-foreground text-sm mt-1">3:00 PM – 4:30 PM EST</p>
             </div>
             <div>
@@ -347,4 +347,3 @@ export default function Events() {
       </div>
   );
 }
-
