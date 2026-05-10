@@ -81,7 +81,7 @@ const salonSessions = [
     ]
   },
   {
-    date: "Thursday, January 22, 2027",
+    date: "Friday, January 22, 2027",
     title: "Session 4: Prototyping — Designing the Next Generation of Generative Organizations",
     content: [
       "Keynote: From theory to practice — how to design governance, capital flows, and accountability for resonance, not ROI",
