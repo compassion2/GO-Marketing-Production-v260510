@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { PageHeader } from "@/components/ui/PageHeader";
 
 const reasonOptions = [
@@ -86,6 +86,8 @@ export default function Connect() {
     how_heard: "",
     message: ""
   });
+  useEffect(() => { window.scrollTo(0, 0); }, []);
+
   const [status, setStatus] = useState(null); // null | "success" | "error"
   const [submitting, setSubmitting] = useState(false);
 
