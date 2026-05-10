@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-secondary/30">
@@ -6,14 +8,23 @@ export default function Footer() {
           <p className="text-sm text-muted-foreground leading-relaxed">
             Generative Ontology is a field of inquiry within Compassion 2.0
           </p>
-          <a
-            href="https://compassion2.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-sm text-primary hover:text-primary/80 transition-colors"
-          >
-            compassion2.com
-          </a>
+          <div className="flex items-center justify-center gap-4">
+            <a
+              href="https://compassion2.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-sm text-primary hover:text-primary/80 transition-colors"
+            >
+              compassion2.com
+            </a>
+            <span className="text-muted-foreground text-sm">|</span>
+            <Link
+              to="/contact"
+              className="inline-block text-sm text-primary hover:text-primary/80 transition-colors"
+            >
+              Contact Compassion 2.0
+            </Link>
+          </div>
           <p className="text-xs text-muted-foreground pt-4">
             © 2026 Compassion 2.0 Ventures Inc. | All rights reserved
           </p>
