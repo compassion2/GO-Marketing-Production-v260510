@@ -27,7 +27,7 @@ const interestOptions = [
   "Mastermind Application",
   "Enterprise ROI of Care Platform (Flourishingly)",
   "Enterprise Altruism Platform (Benevolently)",
-  "Research & Philosophical Inquiry",
+  "Research & Philosophical Inquiry (Generative Ontology)",
   "Community & Events",
   "Funding & Investment",
   "Speaking & Thought Leadership"
