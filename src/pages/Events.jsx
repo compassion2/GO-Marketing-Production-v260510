@@ -1,44 +1,6 @@
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
 
-const contributingVoices = [
-  {
-    name: "Aram Fisher",
-    org: "TheChange.ai",
-    focus: "AI that serves rather than extracts"
-  },
-  {
-    name: "Lama Tenzin",
-    org: "CED Society of Dehradun",
-    focus: "Contemplative traditions applied to community development"
-  },
-  {
-    name: "Shannon Kelly",
-    org: "Mount Madonna School",
-    focus: "Values-based educational development"
-  },
-  {
-    name: "Leo Christov Moore",
-    org: "Institute for Advanced Consciousness Studies",
-    focus: "Consciousness, culture, and systems"
-  },
-  {
-    name: "Michael Shulman",
-    org: "Waycraft",
-    focus: "Relational dimensions of leadership"
-  },
-  {
-    name: "David Hodgson",
-    org: "Mycelial",
-    focus: "Decentralized systems and network-based collaboration"
-  },
-  {
-    name: "Carson Kelly",
-    org: "Compassion 2.0",
-    focus: "Care as infrastructure for generative organizations"
-  }
-];
-
 const caseStudies = [
   "Change Agent AI",
   "Compassion 2.0",
@@ -51,7 +13,7 @@ const caseStudies = [
 
 const salonSessions = [
   {
-    date: "Monday, June 22, 2026",
+    date: "Thursday, January 21, 2027",
     title: "Session 1: Foundations — What is Generative Capital?",
     content: [
       "Keynote: Defining \"generative\" vs. \"regenerative\" vs. \"extractive\" — ontological frameworks for organizational design",
@@ -61,7 +23,7 @@ const salonSessions = [
     ]
   },
   {
-    date: "Friday, August 21, 2026",
+    date: "Thursday, May 27, 2027",
     title: "Session 2: Models — Blurring the Lines Between For-Profit, Non-Profit, and Beyond",
     content: [
       "Keynote: Legal & financial innovation — PBCs, B Corps, L3Cs, cooperatives, community equity, tokenized stewardship",
@@ -71,7 +33,7 @@ const salonSessions = [
     ]
   },
   {
-    date: "Friday, October 23, 2026",
+    date: "Thursday, August 26, 2027",
     title: "Session 3: Funders — Who's Ready to Experiment?",
     content: [
       "Keynote: Mapping the landscape — family offices, progressive VCs, impact angels, foundations, and alternative capital pools",
@@ -81,7 +43,7 @@ const salonSessions = [
     ]
   },
   {
-    date: "Friday, January 22, 2027",
+    date: "Thursday, November 11, 2027",
     title: "Session 4: Prototyping — Designing the Next Generation of Generative Organizations",
     content: [
       "Keynote: From theory to practice — how to design governance, capital flows, and accountability for resonance, not ROI",
@@ -138,13 +100,8 @@ export default function Events() {
             </div>
             <div>
               <p className="text-sm text-muted-foreground uppercase tracking-wider mb-1">Time</p>
-              <p className="text-foreground">2:00 PM – 5:00 PM PST (Sessions)</p>
+              <p className="text-foreground">6:00 PM – 9:00 PM PST (Sessions)</p>
               <p className="text-foreground">5:00 PM Reception</p>
-            </div>
-            <div>
-              <p className="text-sm text-muted-foreground uppercase tracking-wider mb-1">Contribution</p>
-              <p className="text-foreground">$50 per session</p>
-              <p className="text-muted-foreground text-sm mt-1">Donation to support DrawBridge children's arts programs</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground uppercase tracking-wider mb-1">Format</p>
@@ -212,28 +169,6 @@ export default function Events() {
                   </span>
                 ))}
               </div>
-            </div>
-
-            <div>
-              <h3 className="font-display text-lg font-medium text-foreground mb-4">Contributing Voices</h3>
-              <div className="space-y-4">
-                {contributingVoices.map((voice, index) => (
-                  <div key={index} className="border-l-2 border-primary pl-4">
-                    <p className="font-medium text-foreground">
-                      {voice.name}
-                      <span className="text-muted-foreground font-normal"> — {voice.org}</span>
-                    </p>
-                    <p className="text-sm text-muted-foreground">{voice.focus}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Generative Contribution Note */}
-            <div className="border-t border-border pt-6">
-              <p className="text-foreground/80 leading-relaxed text-sm">
-                By participating, you're making a direct generative contribution to DrawBridge, supporting expressive-arts programs that help children experiencing housing instability reclaim creativity, confidence, and connection. Your donation becomes part of the very paradigm we'll explore at the event: how resources, when directed with care, can circulate to create more flourishing for everyone involved.
-              </p>
             </div>
 
             {/* Register Link */}
