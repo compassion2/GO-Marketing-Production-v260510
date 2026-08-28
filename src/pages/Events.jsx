@@ -49,7 +49,7 @@ const salonSessions = [
       "Keynote: From theory to practice — how to design governance, capital flows, and accountability for resonance, not ROI",
       "Workshop: Small groups prototype a new generative org model — including legal structure, funding mechanism, stakeholder map, and success metrics",
       "Closing Circle: Commitments — what will you build, fund, or change after this series?",
-      "Output: Draft \"Generative Capital Playbook\" + invitation to Series 2 (Fall 2026)"
+      "Output: Draft \"Generative Capital Playbook\" + invitation to Series 2 (2028)"
     ]
   }
 ];
@@ -171,17 +171,6 @@ export default function Events() {
               </div>
             </div>
 
-            {/* Register Link */}
-            <div className="pt-4">
-              <a
-                href="https://luma.com/gsdxgmzo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block text-primary hover:text-primary/80 font-medium transition-colors"
-              >
-                Request to join on Luma →
-              </a>
-            </div>
           </div>
         </div>
 
